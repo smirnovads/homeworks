@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+#include <iterator>
+ 
+ 
+int main() {
+    const int SIZE(8);
+    int a[SIZE] = { 1, -2, -3, 4, 5, -6, 7, -8 }, b[SIZE], i, j, k;
+    
+    for ( i = 0, j = 0, k = SIZE - 1; i < SIZE; ++i ) {
+        if ( a[i] < 0 )
+            b[j++] = a[i];
+        else
+            b[k--] = a[i];
+    }
+    
+    for ( i = k + 1, j = SIZE -1; i < j; ++i, --j )
+        std::swap(b[i], b[j]);
+    
+    std::cout << "A: ";
+    std::copy(a, a + SIZE, std::ostream_iterator<int>(std::cout, " "));
+    std::cout << "\nB: ";
+    std::copy(b, b + SIZE, std::ostream_iterator<int>(std::cout, " "));
+    std::cout << std::endl;
+    
+    return 0;
+}

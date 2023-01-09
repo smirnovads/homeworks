@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+void main()
+    {
+
+    const int m=3, n=3; // обьявление размерности матрицы
+    int Ar[m][n]; //обьявление матрицы
+    int i, j, min_num=1, max_num=1, min=0, max=0, sum=0; 
+    cout<<"введите матрицу размерности "<<m<<" на "<<n<<"\n";
+    for (i=0; i<m; i++)
+    {
+            for (j=0; j<n; j++)
+            {
+                cin>>Ar[i][j]; 
+                if (i==0) 
+                {
+                    sum+=Ar[i][j]; 
+                    min+=Ar[i][j]; 
+                    max+=Ar[i][j]; 
+                }
+                else sum+=Ar[i][j]; 
+            }
+            if (sum>max) 
+            {
+                max=sum;  
+                max_num=i; 
+            }
+            if (sum<min)
+            {
+                min=sum; 
+                min_num=i; 
+        }   
+            sum=0; //перед переходом на новую строку обнуляем сумму
+    }
+    i=min_num; 
+    cout<<"\nстрока с минимальной суммой элементов - ";
+    for (j=0; j<n; j++) cout<<Ar[i][j]<<" ";
+    cout<<", сумма ее элементов = "<<min;
+    i=max_num; 
+    cout<<"\nстрока с максимальной суммой элементов - "; 
+    for (j=0; j<n; j++) cout<<Ar[i][j]<<" ";
+    cout<<", сумма ее элементов = "<<max;
+}

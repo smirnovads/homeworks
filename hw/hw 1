@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+
+void mySwap(int &a, int &b){
+   a+=b;
+   b=a-b;
+   a-=b;  
+}
+
+int main()
+{
+    int d, e;
+    d = 10;
+    e = 200;
+    
+    mySwap (d, e);
+}

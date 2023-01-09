@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int a_max = 0;
+   int b_max = 0;
+   
+    int a[4]{ 4, 3, 2, 1 };
+    int b[4]{ 11, 12, 25, 1 };
+    
+    for (int i=0; i<5; i++) {
+        if (a[i]>a_max) {
+            a_max=a[i]; }
+    }
+    for (int i=0; i<5; i++) {
+        if (b[i]>b_max){
+            b_max=b[i]; }
+    }
+    swap (a_max, b_max); //поменяли
+    
+    return 0;
+}
